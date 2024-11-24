@@ -10,5 +10,51 @@
     "next/typescript",
     "plugin:tailwindcss/recommended",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "ignorePatterns": [
+    "tailwind.config.ts"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": [
+        "clsx",
+        "cva",
+        "twMerge"
+      ]
+    }
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        "whitelist": [
+          "dark"
+        ]
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "react/require-default-props": [
+      "error",
+      {
+        "functions": "defaultArguments"
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
+  }
 }
